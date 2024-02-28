@@ -1,0 +1,102 @@
+$descriptionColor: #8C8C8C;
+$nameColor:  #1F1F1F;
+$ButtonColor: #1890FF;
+$ButtonBorderColor: #2F54EB; 
+
+.Container_Wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width:  430px;
+    height: 414px;
+    padding: 12px 20px 12px 20px;
+    border: 1px dashed $descriptionColor;
+}
+.title-Wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.title{
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 38px;
+}
+.desc{
+    color: $descriptionColor;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.5%;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+%input_name_common {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.5%;
+    color: $nameColor;
+}
+
+.input_one_description{
+    @extend %input_name_common
+}
+.input_two_description{
+    @extend %input_name_common
+}
+
+%inputs {
+    width: 390px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid $descriptionColor;
+    padding: 8px 12px 8px 12px;
+    display: flex;
+    outline: none;
+}
+%inputPlaceholder::placeholder {
+    color: $descriptionColor;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.5%;
+}
+
+.input_one_1{
+    @extend %inputs;
+    @extend %inputPlaceholder;
+    color: $descriptionColor;
+}
+.input_one_2{
+    @extend %inputs;
+    @extend %inputPlaceholder;
+    color: $descriptionColor;
+}
+
+.ButtonPasword {
+    margin-top: 10px;
+    border: none;
+    background-color: $ButtonColor;
+    color: white;
+    border-radius: 10px;
+}
+
+.registerButton{
+    text-align: center;
+    width: 390px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid $ButtonBorderColor;
+    background-color: $ButtonColor;
+    color: white;
+}
