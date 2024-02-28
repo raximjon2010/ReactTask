@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import {Email, Icon, Main, Menu, MenuItem, MenuTitle, Name, Profile } from './sidebarStyle';
+import {Email, Icon, Main, Menu, MenuItem, MenuTitle, Name, OpenText, Profile } from './sidebarStyle';
 import { NavLists } from '../utils/sidebar';
 const logo = 'https://secure.gravatar.com/avatar/186cfc27d134c8301c6597b83ff57a02/?s=64&d=https://images.binaryfortress.com/General/UnknownUser1024.png';
 // icon
@@ -14,7 +14,7 @@ import Talaba from '../icon/Talaba.svg'
 import Vector from '../icon/Vector.svg'
 import Arrow from '../icon/Arrow.svg'
 
-const Sidebar = (props) => {
+const Sidebar = ({Add}) => {
     const [aktivee, setActive] = useState([])
     const [active, setAktive] = useState([])
     const [active_2, setAktive_2] = useState([])
@@ -107,7 +107,7 @@ const Sidebar = (props) => {
     }
     return(
       <Main>
-        <MenuTitle>Webbrain.crm</MenuTitle>
+        <MenuTitle onClick={Add}>Webbrain.crm</MenuTitle>
         <Profile>
           <Profile.UserImage src = {logo}/>
           <div>
@@ -129,7 +129,6 @@ const Sidebar = (props) => {
                    Buyurtma
                    <Icon.Arrow  active = {isActive('Buyurtma')} src={Arrow} />
                    </MenuItem>
-                 {qayta?active : ''}
                 </div>
                 <div  onClick={() => OpenData_2(3)}>
                 <MenuItem onClick={() => onActive('Moliya')}>
@@ -137,7 +136,6 @@ const Sidebar = (props) => {
                    Moliya
                    <Icon.Arrow  active = {isActive('Moliya')} src={Arrow} />
                    </MenuItem>
-                 {qayta_2?active_2 : ''}
                 </div>
                 <div  onClick={() => OpenData_3(4)}>
                 <MenuItem  onClick={() => onActive('Talaba')}>
@@ -145,7 +143,7 @@ const Sidebar = (props) => {
                    Talaba
                    <Icon.Arrow  active = {isActive('Talaba')} src={Arrow} />
                    </MenuItem>
-                 {qayta_3?active_3 : ''}
+                   {qayta_3? <div><OpenText>{active_3[0]}</OpenText> <OpenText>{active_3[1]}</OpenText> <OpenText>{active_3[2]}</OpenText> <OpenText>{active_3[3]}</OpenText> <OpenText>{active_3[4]}</OpenText></div> : ''}
                 </div>
                 <div  onClick={() => OpenData_4(5)}>
                 <MenuItem  onClick={() => onActive('Guruhlar')}>
@@ -153,7 +151,7 @@ const Sidebar = (props) => {
                    Guruhlar
                    <Icon.Arrow  active = {isActive('Guruhlar')} src={Arrow} />
                    </MenuItem>
-                 {qayta_4?active_4 : ''}
+                   {qayta_4? <div><OpenText>{active_4[0]}</OpenText> <OpenText>{active_4[1]}</OpenText> <OpenText>{active_4[2]}</OpenText></div> : ''}
                 </div>
 
                 <div  onClick={() => OpenData_5(6)}>
@@ -162,7 +160,7 @@ const Sidebar = (props) => {
                    Kurslar
                    <Icon.Arrow  active = {isActive('Kurslar')} src={Arrow} />
                    </MenuItem>
-                 {qayta_5?active_5 : ''}
+                   {qayta_5? <div><OpenText>{active_5[0]}</OpenText> <OpenText>{active_5[1]}</OpenText></div> : ''}
                 </div>
                 <div  onClick={() => OpenData_6(7)}>
                 <MenuItem  onClick={() => onActive('HR')}>
@@ -170,7 +168,7 @@ const Sidebar = (props) => {
                    HR
                    <Icon.Arrow  active = {isActive('HR')} src={Arrow} />
                    </MenuItem>
-                 {qayta_6?active_6 : ''}
+                   {qayta_6? <div><OpenText>{active_6[0]}</OpenText> <OpenText>{active_6[1]}</OpenText></div> : ''}
                 </div>
                 <div  onClick={() => OpenData_7(8)}>
                 <MenuItem  onClick={() => onActive('Sozlamalar')}>
@@ -178,7 +176,7 @@ const Sidebar = (props) => {
                    Sozlamalar
                    <Icon.Arrow  active = {isActive('Sozlamalar')} src={Arrow} />
                    </MenuItem>
-                 {qayta_7?active_7 : ''}
+                   {qayta_7? <div><OpenText>{active_7[0]}</OpenText> <OpenText>{active_7[1]}</OpenText><OpenText>{active_7[2]}</OpenText></div> : ''}
                 </div>
           <MenuItem last>Chiqish</MenuItem>
           </Menu>

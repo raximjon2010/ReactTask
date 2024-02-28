@@ -1,10 +1,10 @@
 import React from 'react';
-import { CardData } from './cardData';
+import { CardData } from '../utils/cardData';
 import { AddData, AddEnd, Body, BodyChild_1, BodyChild_1Wrapper, BoshIcon, Box, Image, TitleCard } from './bodyStyle';
 import Adding from '../icon/add.svg'  
 import Sozlamalar from '../icon/sozlamalar.png'  
 
-const Card = ({Add}) => {
+const Card = () => {
         return(
             <Body>
               {
@@ -33,12 +33,6 @@ const Card = ({Add}) => {
                     )
                 })
                 }
-                  <AddData>
-                    <AddEnd>
-                     <Image onClick={Add} icon = 'true' src={Adding} alt="" />
-                    </AddEnd>
-                    <Image src= {Sozlamalar} alt='Sozlamalar'/>
-                  </AddData>
             {/* ===================================== */}
 
             </Body>

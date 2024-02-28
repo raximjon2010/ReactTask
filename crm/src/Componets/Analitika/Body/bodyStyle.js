@@ -81,7 +81,6 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 flex-wrap: wrap;
-overflow: auto;
 
 padding-left: 20px;
 padding-right: 20px; 

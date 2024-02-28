@@ -11,6 +11,7 @@ const slideIn = keyframes`
 
 export const Container = styled.div`
 display: flex;
+overflow-y: auto;
 `
 export const AddContainer = styled.div`
 width: 100%;

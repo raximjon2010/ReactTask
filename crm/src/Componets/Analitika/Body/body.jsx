@@ -1,8 +1,9 @@
 import Search from '../icon/Search.svg';
 import { DateInput, Navbar, Sanalar, SearchIcon, SearchInput, Search_input, SelectTil, Soat, Title, Wrapper } from './bodyStyle.js';
 import Card from './card';
+import Footer from './footer/footer';
 
-const Body = ({Open}) => {
+const Body = () => {
     return (
         <Wrapper>
         {/*==================================================  */}
@@ -23,8 +24,10 @@ const Body = ({Open}) => {
                         </Navbar>
         {/*==================================================  */}
                    <Title>Analitika</Title>
-                            <Card Add = {Open}/>
+                            <Card />
+                            <Footer/>
                         </Wrapper>
+                        
     )
 }
 

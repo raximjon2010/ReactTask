@@ -17,6 +17,7 @@ color: #F5F6F8;
 
 display: flex;
 flex-direction: column;
+overflow-y: auto;
 `
 export const MenuTitle = styled.div`
 height: 60px;
@@ -87,4 +88,20 @@ width: 16px;
 height: 16px;
 margin-left:auto;
 transform: ${(({active}) => active ? 'rotate(90deg)' : '')};
+`
+export const OpenText = styled.div`
+width: 100%;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+color: #F8FAFC;
+&:hover{
+  background: #253E5F;
+  cursor: pointer;
+  color: #1890FF;
+}  
+padding: 16px 24px;
+display: flex;
+align-items: center;
+gap: 20px;
 `
