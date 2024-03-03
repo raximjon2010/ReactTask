@@ -76,6 +76,7 @@ height: 100%;
 background: #FFFFFF;
 border-radius: 8px;
 margin-top: 10px;
+padding: 0px 10px ;
 
 display: flex;
 justify-content: space-around;
@@ -93,8 +94,8 @@ color:#253E5F;
 margin: 5px;
 `
 export const Box = styled.div`
-width: 344px;
-height: 168px;
+width: ${(({weight}) => weight ? '280px' : '344px')};
+height: ${(({weight}) => weight ? '168px' : '168px')};
 border-radius: 8px;
 background: #F6FFED;
 border: 1px solid #F0F0F0;
@@ -125,7 +126,7 @@ export const BodyChild_1 = styled.div`
  `
  export const TitleCard = styled.h1`
  font-weight: 600;
- font-size: ${(props) => props.title ==='number' ? '40px' : '20px'};
+ font-size: ${(props) => props.title ==='number' ? '30px' : '20px'};
  line-height: 24px;
  color: #253E5F;
  `

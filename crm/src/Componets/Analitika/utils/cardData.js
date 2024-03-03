@@ -35,13 +35,22 @@ export const CardData = [
     {
         id: 4, BoshIcon: Instagram, title: 'Instagram',
         AddIcon: nuqta,TopOrBottomIcon: Top_icon, number: '+22%', image: unolti_k,
+        weight: 'weight',
     },
     {
         id: 5, BoshIcon: Telegram, title: 'Telegram',
-        AddIcon: nuqta,TopOrBottomIcon: Bottom_red_button, number: '-15%', image: yigirmasakkiz_k
+        AddIcon: nuqta,TopOrBottomIcon: Bottom_red_button, number: '-15%', image: yigirmasakkiz_k,
+        weight: 'weight',
     },
     {
         id: 6, BoshIcon: Linkedin, title: 'Linkedin',
         AddIcon: nuqta,TopOrBottomIcon: Top_icon, number: '+22%', image: ikki_k,
+        weight: 'weight',
     },
+    {
+        id: 7, BoshIcon: Youtube, title: 'Youtube',
+        AddIcon: nuqta,TopOrBottomIcon: Top_icon, number: '+22%', image: ikki_k,
+        weight: 'weight',
+    },
+
 ]

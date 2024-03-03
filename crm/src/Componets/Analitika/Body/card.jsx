@@ -1,8 +1,6 @@
 import React from 'react';
 import { CardData } from '../utils/cardData';
-import { AddData, AddEnd, Body, BodyChild_1, BodyChild_1Wrapper, BoshIcon, Box, Image, TitleCard } from './bodyStyle';
-import Adding from '../icon/add.svg'  
-import Sozlamalar from '../icon/sozlamalar.png'  
+import {Body, BodyChild_1, BodyChild_1Wrapper, BoshIcon, Box, Image, TitleCard } from './bodyStyle';
 
 const Card = () => {
         return(
@@ -10,7 +8,7 @@ const Card = () => {
               {
                 CardData.map((value) => {
                   return (
-                    <Box>
+                    <Box weight = {value?.weight}>
                   <BodyChild_1Wrapper>
               <BodyChild_1>
                 <div style={{display: 'flex', gap: '10px', alignItems: 'center'}}>
