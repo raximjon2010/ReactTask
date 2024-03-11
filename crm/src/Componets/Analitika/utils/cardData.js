@@ -32,6 +32,10 @@ export const CardData = [
         id: 3, BoshIcon: Filial, title: 'Filiallar',
         AddIcon: AddCyan,TopOrBottomIcon: Teng, number: '3', image: Filial_group
     },
+
+]
+
+export const IjtimoiyTarmoqlar = [
     {
         id: 4, BoshIcon: Instagram, title: 'Instagram',
         AddIcon: nuqta,TopOrBottomIcon: Top_icon, number: '+22%', image: unolti_k,
@@ -52,5 +56,4 @@ export const CardData = [
         AddIcon: nuqta,TopOrBottomIcon: Top_icon, number: '+22%', image: ikki_k,
         weight: 'weight',
     },
-
 ]

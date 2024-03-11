@@ -5,6 +5,8 @@ height: 60px;
 flex: 1;
 background: #FFFFFF;
 position: relative;
+top: 0;
+position: sticky;
 
 display: flex;
 align-items: center;
@@ -81,17 +83,17 @@ padding: 0px 10px ;
 display: flex;
 justify-content: space-around;
 align-items: center;
-flex-wrap: wrap;
+flex-direction: column;
 
 padding-left: 20px;
 padding-right: 20px; 
 `
 export const Title = styled.h1`
-font-weight: 600;
+font-weight: ${(({auto}) => auto ? '500' : '600') };
 font-size: 20px;
 line-height: 28px;
 color:#253E5F;
-margin: 5px;
+margin-right: ${(({auto}) => auto ? 'auto' : '5px')};
 `
 export const Box = styled.div`
 width: ${(({weight}) => weight ? '280px' : '344px')};
@@ -101,12 +103,23 @@ background: #F6FFED;
 border: 1px solid #F0F0F0;
 padding: 15px 20px 15px 20px;
 `
+export const Div = styled.div`
+height: 100%;
+background: #FFFFFF;
+border-radius: 8px;
 
+display: flex;
+justify-content: center;
+align-items: center;
+gap: ${(({gap}) => gap ? '5px' : '45px')};
+`
 export const Wrapper = styled.div`
 background: #F6FFED;
 display: flex;
 flex-direction: column;
 flex: 1;
+overflow-y: auto;
+height: 100vh;
  `  
 
 export const BodyChild_1 = styled.div`

@@ -8,7 +8,7 @@ import Talaba from '../icon/Talaba.svg'
 import Vector from '../icon/Vector.svg'
 import Arrow from '../icon/Arrow.svg'
 
-export const NavLists = [
+export const Navlists = [
     { id: 1, title: "Anlitika", data: "", iconClass: Frame, iconArrow: Arrow,},
   {
     id: 2,
@@ -61,7 +61,6 @@ export const NavLists = [
     title: "Sozlamalar",
     data: ["Umumiy Sozlamalar", "Manager", "Mentor", "Talaba"],
     iconClass: Vector,
-    iconArrow: Arrow,
   },
 ];
 

@@ -11,7 +11,6 @@ const slideIn = keyframes`
 
 export const Container = styled.div`
 display: flex;
-overflow-y: auto;
 `
 export const AddContainer = styled.div`
 width: 100%;
@@ -78,7 +77,7 @@ height:40px;
 border-radius: 8px;
 padding: 10px 16px 10px 16px;
 color: ${((prop) => prop.rang ? 'white' : 'black')};
-background-color: ${((prop) => prop.rang === true ? '#1890FF' : 'white')};
+background-color: ${((prop) => prop.rang ? '#1890FF' : 'white')};
 border: 1px solid #FFA39E;
 cursor: pointer;
 `

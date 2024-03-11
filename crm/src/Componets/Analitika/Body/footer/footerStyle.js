@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 width: 100%;
-height:280px;
+height:250px;
 background: #FFFFFF;
 display: flex;
 gap: 10px;
+flex: 1;
 `
 
 export const EmailXabarlar = styled.div`
@@ -15,7 +16,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-gap: 10px;
+gap: 5px;
 border: 1px solid #F0F0F0;
 border-radius: 8px;
 `
@@ -66,10 +67,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-gap: 20px;
+gap: 10px;
 flex: 1;
 border: 1px solid #F0F0F0;
-
 `
 export const DateContainer = styled.div`
 display: flex;

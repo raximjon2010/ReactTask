@@ -1,16 +1,13 @@
 // import Register from "../Componets/register/register"
 // import Reset from "../Componets/resetPasword/Reset"
-
-import Analitika from "../Componets/Analitika"
-// import Filial from "../Componets/filial"
-
+import Analitika from "../componets/Analitika"
+import AnalitikaProvider from "../context/Analitika"
 function App() {
   return (
     <div>
       {/* <Register/> */}
       {/* <Reset/> */}
-      <Analitika/>
-      {/* <Filial/> */}
+      <AnalitikaProvider><Analitika/></AnalitikaProvider>
       </div>
   )  
 }

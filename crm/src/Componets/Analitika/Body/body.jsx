@@ -3,6 +3,7 @@ import { DateInput, Navbar, Sanalar, SearchIcon, SearchInput, Search_input, Sele
 import Card from './card';
 import Footer from './footer/footer';
 
+import BodyProvider from '../../../context/Analitika/Body';
 const Body = () => {
     return (
         <Wrapper>
@@ -23,8 +24,10 @@ const Body = () => {
                             </Sanalar>
                         </Navbar>
         {/*==================================================  */}
-                   <Title>Analitika</Title>
-                            <Card />
+                   <Title style={{marginLeft: '20px'}}>Analitika</Title>
+                   <BodyProvider>
+                 <Card />
+                   </BodyProvider>
                             <Footer/>
                         </Wrapper>
                         

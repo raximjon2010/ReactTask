@@ -8,13 +8,11 @@ const Footer = () => {
     return (
         <Container>
             <EmailXabarlar>
-                <div>
-            <EmailTitile>Email Xabarlar <span>{data.length}</span></EmailTitile>
-                </div>
+                <EmailTitile>Email Xabarlar <span>{data.length}</span></EmailTitile>
                 {
                     data.map((value) => {
                         return (
-                    <Item>
+                            <Item key={value.id}>
                    <input type="checkbox" />
                    <Image src={value.image} alt="" />
                    <Name>
