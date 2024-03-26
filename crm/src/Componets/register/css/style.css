@@ -11,6 +11,9 @@
   height: 414px;
   padding: 12px 20px 12px 20px;
   border: 1px dashed #8C8C8C;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .title-Wrapper {
@@ -36,7 +39,7 @@
 .inputs {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .input_two_description, .input_one_description {
@@ -49,7 +52,7 @@
 
 .input_one_2, .input_one_1 {
   width: 390px;
-  height: 30px;
+  height: 48px;
   border-radius: 8px;
   border: 1px solid #8C8C8C;
   padding: 8px 12px 8px 12px;
@@ -92,7 +95,7 @@
 .registerButton {
   text-align: center;
   width: 390px;
-  height: 30px;
+  height: 48px;
   border-radius: 8px;
   border: 1px solid #2F54EB;
   background-color: #1890FF;

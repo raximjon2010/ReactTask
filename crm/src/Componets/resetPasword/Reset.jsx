@@ -1,46 +1,46 @@
-import React from 'react';
-import './css/style.css'
+import React, { useContext, useState } from 'react';
+import { Back, Button, Description, Input, InputLabel, InputWrapper, ResetContainer, ResetWrapper, Select, Title } from './styled';
+const back = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ21aUq6vIN_8MMIboPcpSi-GkjJHMm4qegdc43DRciEg&s'
+import { ResetFunction } from '../../context/resetPassword';
 
-class Reset extends React.Component {
-constructor(props) {
-    super(props);
-
-    this.state = {
-        select: 'UZB',
-        place: '+998 90 000 00 00'
-    };
-}
-
-    render() {
-        const OnSelect = (e) => {
-            this.setState({select: e.target.value})
-            switch(e.target.value) {
-                case 'UZB': this.setState({place: '+998 90 000 00 00'});break;
-                case 'ENG': this.setState({place: '+44 20 0000 0000'});break;
-                case 'RU': this.setState({place: '+7 (958) 000-00-00'});break;
-            }
+const Reset = ({active, setActive, setNumber, number}) => {
+    const [reset, dispatch] = useContext(ResetFunction)
+    const [select, setSelect] = useState('UZB');
+    const [place, setPlace] = useState('+998 90 000 00 00');
+    const [border, setBorder] = useState(false);
+     
+    const onSelect = (e) => {
+        const inputValue = e.target.value;
+        setSelect(inputValue);
+        switch(inputValue) {
+            case 'UZB': setPlace('+998 90 000 00 00'); break;
+            case 'ENG': setPlace('+44 20 0000 0000'); break;
+            case 'RU': setPlace('+7 (958) 000-00-00'); break;
         }
-        return (
-        <div className='container_wrapper'>
-            <div className="container">
-                <h1 className='Name'>Reset Password</h1>
-                <p className='desc'>Enter your email to reset your password.</p>
-                <div className='input_wrapper'>
-                    <p className='input_name'>Phone:</p>
-                    <div className='inputs'>
-                        <select onChange={OnSelect} name="" id="">
+    }
+    return (
+        <>
+        <Back onClick={() => setActive('register')} src={back} alt="" />
+        <ResetContainer>
+            <ResetWrapper>
+                <Title>Reset Password</Title>
+                <Description>Enter your phone number to reset your password.</Description>
+                <InputWrapper>
+                    <InputLabel>Telefon:</InputLabel>
+                    <div style={{display: 'flex'}}>
+                        <Select onChange={onSelect} name="">
                             <option value="UZB">UZB</option>
                             <option value="ENG">ENG</option>
                             <option value="RU">RU</option>
-                        </select>
-                        <input maxLength={'20'} type="text" placeholder={this.state.place ? this.state.place : ''}/>
+                        </Select>
+                        <Input onChange={(e) =>{return setNumber(e.target.value), setBorder(false)}}  border = {border} maxLength={'20'} type="number" placeholder={place ? place : ''}/>
                     </div>
-                        <button className='button'>Reset Password</button>
-                </div>
-            </div>
-        </div>
-        );
-    }
+                </InputWrapper>
+                <Button onClick={() => dispatch({type: 'Next', payload: {number, setBorder, setActive}})}>Reset Password</Button>
+            </ResetWrapper>
+        </ResetContainer>
+</>
+    );
 }
 
 export default Reset;

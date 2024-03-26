@@ -7,9 +7,9 @@ const AddImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS75ebrwv
 import { AnalitikaFunction } from '../../context/Analitika';
 
 const Analitika = () =>  {
-
     const [Active, dispatch] = useContext(AnalitikaFunction)
         return (
+            <div>
             <Container> 
                  {
                 Active ? 
@@ -32,7 +32,7 @@ const Analitika = () =>  {
 
                     <ButtonWrapper>
                     <Button rang = {false} onClick={() => dispatch({type: 'close'})}>Close</Button>
-                    <Button rang = {true}>Saqlash</Button>
+                    <Button rang = {true} to={'/analitika'}>Saqlash</Button>
                     </ButtonWrapper>
                 </Add>
             </AddContainer>
@@ -43,6 +43,7 @@ const Analitika = () =>  {
             </SideBarProvider>     
                 <Body/>
             </Container>
+      </div>
             )
     }
 export default Analitika;

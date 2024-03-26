@@ -5,7 +5,6 @@ export const SidebarFunction = createContext();
 
 const SideBarProvider = ({children}) => {
     const [NavList,setNavlist] = useState(Navlists);
-    
     return (
         <SidebarFunction.Provider value={[NavList,setNavlist]}>
             {children}

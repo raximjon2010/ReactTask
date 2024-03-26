@@ -16,6 +16,9 @@ $ButtonBorderColor: #2F54EB;
     height: 414px;
     padding: 12px 20px 12px 20px;
     border: 1px dashed $descriptionColor;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .title-Wrapper{
     display: flex;
@@ -38,7 +41,7 @@ $ButtonBorderColor: #2F54EB;
 .inputs{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 %input_name_common {
     font-weight: 400;
@@ -57,7 +60,7 @@ $ButtonBorderColor: #2F54EB;
 
 %inputs {
     width: 390px;
-    height: 30px;
+    height: 48px;
     border-radius: 8px;
     border: 1px solid $descriptionColor;
     padding: 8px 12px 8px 12px;
@@ -94,7 +97,7 @@ $ButtonBorderColor: #2F54EB;
 .registerButton{
     text-align: center;
     width: 390px;
-    height: 30px;
+    height: 48px;
     border-radius: 8px;
     border: 1px solid $ButtonBorderColor;
     background-color: $ButtonColor;

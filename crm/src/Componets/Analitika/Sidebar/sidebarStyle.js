@@ -3,9 +3,8 @@ import { styled } from "styled-components";
 export const Main = styled.div`
 width: 300px;
 height: 100vh;
-background: #162539;
-color: #F5F6F8;
-
+background:${({bg}) => bg ? '#F5F6F8': '#162539' };
+color: ${(({color}) => color ? 'blue' : 'white')};
 display: flex;
 flex-direction: column;
 overflow-y: auto ;
@@ -22,7 +21,6 @@ border-bottom: 1px solid #253E5F;
 position: relative;
 position: sticky;
 top: 0;
-background: #162539;
 `
 export const Profile = styled.div`
 display: flex;
@@ -39,7 +37,7 @@ export const Name =styled.p`
 font-weight; 600;
 font-size: 14px;
 line-height: 20px;
-color: #F8FAFC;
+color: ${(({color})=> color ? '#253E5F' :'#F8FAFC')};
 margin-left: 24px;
 `
 export const Email =styled.p`
@@ -61,15 +59,15 @@ width: 100%;
 font-weight: 500;
 font-size: 14px;
 line-height: 20px;
-color: #F8FAFC;
+color:${({bg}) => bg ? '#253E5F':'#F5F6F8'};
 padding: 16px 24px;
 margin-top: ${(({last}) => last && 'auto')};
 border-top: ${({last}) => last && "1px solid gray"};
 &:hover{
-  background: #253E5F;
+  background:${({bg}) => bg ? '#162539': '#F5F6F8' };
   cursor: pointer;
-  color: #1890FF;
-}  
+  color:${({bg}) => bg ? '#F5F6F8': '#162539'};
+}
 display: flex;
 align-items: center;
 gap: 20px;
@@ -89,7 +87,7 @@ width: 100%;
 font-weight: 500;
 font-size: 14px;
 line-height: 20px;
-color: #F8FAFC;
+color: ${(({color}) => color ? '#253E5F': '#F8FAFC')};
 &:hover{
   background: #253E5F;
   cursor: pointer;

@@ -11,9 +11,13 @@ const Sidebar = ({open, setOpen}) => {
     const [Active, dispatch] = useContext(AnalitikaFunction)
     const [isActiv, SetisActiv] = useState(0);
     const [active, setaActive] = useState(null);
+    const [dark, setDark] = useState(true);
+    const [refresh, setRefresh] = useState(true);
+
     const onActive = (name, id) => {
       SetisActiv(id)
       isActiv !== id ? setaActive(!active) : setaActive(!active);
+      
       if (NavList.includes(name)) {
         let aktive = NavList.filter((val) => val !== name)
         setNavlist(aktive)
@@ -26,13 +30,19 @@ const Sidebar = ({open, setOpen}) => {
     const isActive = (title) => {
       return NavList.includes(title)
     }
+    const DarkMode = () => {
+      setDark(!dark)
+    }
+    const Exit = () => {
+      localStorage.clear();
+    }
     return (
-      <Main>
-        <MenuTitle onClick={() => dispatch({type: 'open'})}>Webbrain.crm</MenuTitle>
+      <Main bg = {dark} color = {dark}>
+        <MenuTitle onClick={() => { return dispatch({type: 'open'}), DarkMode()}}>Webbrain.crm</MenuTitle>
         <Profile>
           <Profile.UserImage src = {logo}/>
           <div>
-          <Name>Rahimjon Xujaqulov</Name>
+          <Name color = {dark}>Rahimjon Xujaqulov</Name>
           <Email>r.xujaqulov@gmail.com</Email>
           </div>
         </Profile>
@@ -41,19 +51,19 @@ const Sidebar = ({open, setOpen}) => {
             NavList.map(value => {
               return (
                 <div key={value.id}>
-                <MenuItem  onClick={() => onActive(value.title, value.id)}>
+                <MenuItem bg = {dark} onClick={() => onActive(value.title, value.id)}>
                      <Icon  src= {value.iconClass} alt='eror'/> 
                       <p>{value.title}</p>
                      <ArrowImg src = {Arrow}  active = {isActive(value.title)}/>
                      </MenuItem>
                      {
-                      active ? isActiv == value.id ? <div><OpenText>{value?.data[0]}</OpenText> <OpenText>{value?.data[1]}</OpenText> <OpenText>{value?.data[2]}</OpenText></div>: '' : ''
+                      active ? isActiv == value.id ? <div><OpenText color={dark}>{value?.data[0]}</OpenText> <OpenText color={dark}>{value?.data[1]}</OpenText> <OpenText color={dark}>{value?.data[2]}</OpenText></div>: '' : ''
                      }
                       </div>
                      )
                     })
            }
-          <MenuItem last = 'true'>Chiqish</MenuItem>
+          <MenuItem onClick={Exit} bg = {dark} last = 'true'>Chiqish</MenuItem>
           </Menu>
       </Main>
     );
